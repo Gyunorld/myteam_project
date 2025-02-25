@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LoginTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="LoginLabel" text="로그인 Test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Bp-Ve-kVB" customClass="LoginLabel">
+                                <rect key="frame" x="10" y="209" width="373" height="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="GIDSignInButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wix-Ma-J9w">
+                                <rect key="frame" x="10" y="527" width="373" height="58"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="ios_neutral_sq_SU">
+                                    <backgroundConfiguration key="background"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="google:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rzj-CT-8xf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="AppleLoginButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wAq-LD-y6T">
+                                <rect key="frame" x="10" y="615" width="373" height="46"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="appleid_button">
+                                    <backgroundConfiguration key="background"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="apple:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qa8-Ya-qZf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="KakaoLoginButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sN5-bE-i9z">
+                                <rect key="frame" x="10" y="691" width="373" height="36.666666666666629"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="kakao_login_medium_wide">
+                                    <backgroundConfiguration key="background"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sN5-bE-i9z" firstAttribute="top" secondItem="wAq-LD-y6T" secondAttribute="bottom" constant="30" id="3qF-fE-GRl"/>
+                            <constraint firstItem="2Bp-Ve-kVB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="8XM-Hd-M4v"/>
+                            <constraint firstItem="sN5-bE-i9z" firstAttribute="centerX" secondItem="wAq-LD-y6T" secondAttribute="centerX" id="9dq-J2-ze2"/>
+                            <constraint firstItem="sN5-bE-i9z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="DOp-T3-WzD"/>
+                            <constraint firstItem="wAq-LD-y6T" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="E7a-PQ-ye6"/>
+                            <constraint firstItem="wAq-LD-y6T" firstAttribute="top" secondItem="wix-Ma-J9w" secondAttribute="bottom" constant="30" id="Jrl-iO-fXv"/>
+                            <constraint firstItem="wAq-LD-y6T" firstAttribute="centerX" secondItem="wix-Ma-J9w" secondAttribute="centerX" id="TXU-M4-nnV"/>
+                            <constraint firstItem="2Bp-Ve-kVB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="VEh-sH-3Te"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2Bp-Ve-kVB" secondAttribute="trailing" constant="10" id="ae1-yL-zYG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wAq-LD-y6T" secondAttribute="trailing" constant="10" id="fnw-qT-KCK"/>
+                            <constraint firstItem="wix-Ma-J9w" firstAttribute="top" secondItem="2Bp-Ve-kVB" secondAttribute="bottom" constant="300" id="nYf-Gc-Uh0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sN5-bE-i9z" secondAttribute="trailing" constant="10" id="wEP-o2-JrN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wix-Ma-J9w" secondAttribute="trailing" constant="10" id="xE4-Kv-pce"/>
+                            <constraint firstItem="wix-Ma-J9w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="zKl-Bj-qH7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="appleLogin" destination="wAq-LD-y6T" id="hOF-9a-Pt8"/>
+                        <outlet property="googleLogin" destination="wix-Ma-J9w" id="cU3-1U-GTW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="178" y="10"/>
+        </scene>
+        <!--Success View Controller-->
+        <scene sceneID="PGl-3k-MrJ">
+            <objects>
+                <viewController storyboardIdentifier="LoginSuccessViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="e1E-FY-gfd" customClass="SuccessViewController" customModule="LoginTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ElZ-xy-tz9">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인 성공" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3t-5c-YVr">
+                                <rect key="frame" x="10" y="428" width="373" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BkG-RB-BNz">
+                                <rect key="frame" x="155" y="461.33333333333331" width="83" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="83" id="Db4-ed-ine"/>
+                                </constraints>
+                                <color key="tintColor" red="0.6083909273" green="0.1123648956" blue="0.1231308654" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="로그아웃"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ewD-4Y-Da0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="g3t-5c-YVr" firstAttribute="centerY" secondItem="ewD-4Y-Da0" secondAttribute="centerY" id="1ji-NY-wKr"/>
+                            <constraint firstItem="g3t-5c-YVr" firstAttribute="leading" secondItem="ewD-4Y-Da0" secondAttribute="leading" constant="10" id="4f6-5p-h6c"/>
+                            <constraint firstItem="BkG-RB-BNz" firstAttribute="firstBaseline" secondItem="g3t-5c-YVr" secondAttribute="baseline" constant="40" id="DgL-Ml-jIZ"/>
+                            <constraint firstItem="ewD-4Y-Da0" firstAttribute="trailing" secondItem="BkG-RB-BNz" secondAttribute="trailing" constant="155" id="jbU-96-3XB"/>
+                            <constraint firstItem="BkG-RB-BNz" firstAttribute="leading" secondItem="ewD-4Y-Da0" secondAttribute="leading" constant="155" id="pXg-Ih-waO"/>
+                            <constraint firstItem="ewD-4Y-Da0" firstAttribute="trailing" secondItem="g3t-5c-YVr" secondAttribute="trailing" constant="10" id="qgQ-lJ-dvp"/>
+                            <constraint firstItem="g3t-5c-YVr" firstAttribute="centerX" secondItem="ewD-4Y-Da0" secondAttribute="centerX" id="sZm-OT-7wU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gmE-Hy-hw4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="keW-GM-emH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1187" y="10"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="appleid_button" width="200" height="32"/>
+        <image name="ios_neutral_sq_SU" width="189" height="44"/>
+        <image name="kakao_login_medium_wide" width="150" height="22.5"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
