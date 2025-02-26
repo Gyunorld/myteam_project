@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LoginTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="LoginTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,6 +48,9 @@
                                 <buttonConfiguration key="configuration" style="plain" image="kakao_login_medium_wide">
                                     <backgroundConfiguration key="background"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="kakao:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hle-0c-jHd"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -72,6 +75,7 @@
                     <connections>
                         <outlet property="appleLogin" destination="wAq-LD-y6T" id="hOF-9a-Pt8"/>
                         <outlet property="googleLogin" destination="wix-Ma-J9w" id="cU3-1U-GTW"/>
+                        <outlet property="kakaoLogin" destination="sN5-bE-i9z" id="For-zi-mPs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -92,7 +96,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BkG-RB-BNz">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="LogoutButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BkG-RB-BNz">
                                 <rect key="frame" x="155" y="461.33333333333331" width="83" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="83" id="Db4-ed-ine"/>
@@ -100,6 +104,9 @@
                                 <color key="tintColor" red="0.6083909273" green="0.1123648956" blue="0.1231308654" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="로그아웃"/>
+                                <connections>
+                                    <action selector="Logout:" destination="e1E-FY-gfd" eventType="touchUpInside" id="D1r-9s-8F9"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ewD-4Y-Da0"/>

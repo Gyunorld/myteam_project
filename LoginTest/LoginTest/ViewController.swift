@@ -4,18 +4,23 @@ import FirebaseAuth
 import GoogleSignIn
 import AuthenticationServices
 import CryptoKit
+import KakaoSDKUser
+import KakaoSDKAuth
+import KakaoSDKCommon
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+
     }
     
     fileprivate var currentNonce: String?
 
     @IBOutlet weak var googleLogin: GIDSignInButton!
     @IBOutlet weak var appleLogin: UIButton!
+    @IBOutlet weak var kakaoLogin: UIButton!
     
    
     //MARK: - 구글로그인
@@ -57,7 +62,48 @@ class ViewController: UIViewController {
         startSignInWithAppleFlow()
     }
     
+    //MARK: - 카카오로그인
+    @IBAction func kakao(_ sender: UIButton) {
+        if UserApi.isKakaoTalkLoginAvailable() {
+            UserApi.shared.loginWithKakaoTalk { oauthToken, error in
+                if let error = error {
+                    print(error)
+                } else {
+                    print("New Kakao Login")
+                    
+                    //do something
+                    _ = oauthToken
+                    
+                    // 로그인 성공 시
+                    UserApi.shared.me { kuser, error in
+                        if let error = error {
+                            print("------KAKAO : user loading failed------")
+                            print(error)
+                        } else {
+                            Auth.auth().createUser(withEmail: (kuser?.kakaoAccount?.email)!, password: "\(String(describing: kuser?.id))") { fuser, error in
+                                if let error = error {
+                                    print("FB : signup failed")
+                                    print(error)
+                                    Auth.auth().signIn(withEmail: (kuser?.kakaoAccount?.email)!, password: "\(String(describing: kuser?.id))", completion: nil)
+                                } else {
+                                    print("FB : signup success")
+                                }
+                            }
+                        }
+                    }
+                    
+                    let VC = self.storyboard?.instantiateViewController(identifier: "LoginSuccessViewController") as! SuccessViewController
+                    VC.modalPresentationStyle = .fullScreen
+                    self.present(VC, animated: true, completion: nil)
+                }
+            }
+        }
+    }
+    
 }
+
+
+//MARK: - 애플로그인 내부 함수
 
 private extension ViewController {
     func startSignInWithAppleFlow() {
@@ -145,3 +191,5 @@ extension ViewController: ASAuthorizationControllerPresentationContextProviding 
         return self.view.window ?? UIWindow()
     }
 }
+
+

@@ -10,6 +10,8 @@ import FirebaseCore
 import Firebase
 import FirebaseAuth
 import GoogleSignIn
+import KakaoSDKCommon
+import KakaoSDKAuth
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        let NATIVE_APP_KEY:String = Bundle.main.infoDictionary?["NATIVE_APP_KEY"] as? String ?? "NATIVE_APP_KEY is nil"
+        KakaoSDK.initSDK(appKey: NATIVE_APP_KEY,loggingEnable: true)
         return true
     }
 
@@ -39,7 +43,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ app: UIApplication,
                      open url: URL,
                      options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
-      return GIDSignIn.sharedInstance.handle(url)
+        if GIDSignIn.sharedInstance.handle(url) {
+            return true
+        }
+        
+        if (AuthApi.isKakaoTalkLoginUrl(url)) {
+            return AuthController.handleOpenUrl(url: url, options: options)
+        }
+        
+        return false
     }
 
 }

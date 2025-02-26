@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NATIVE_APP_KEY</key>
+	<string>94c014ba282584e490f29397d19ea0e9</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -12,6 +14,19 @@
 				<string>com.googleusercontent.apps.564561022484-ehr6jgkm03k4nfaenk14sggh9po583o9</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>kakao94c014ba282584e490f29397d19ea0e9</string>
+			</array>
+		</dict>
+	</array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>kakaokompassauth</string>
+		<string>kakaolink</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

@@ -33,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		F2CEFB352D6D9CD9002EA7C3 /* LoginTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2E42C182D6EF9940017CBD5 /* KakaoSDKFriendCore.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:L75WVXX68A:Kakao Corp."; lastKnownFileType = wrapper.xcframework; name = KakaoSDKFriendCore.xcframework; path = "../../../../../Library/Developer/Xcode/DerivedData/LoginTest-fxbcrnsgekcnneflvddwfbuyshlv/SourcePackages/checkouts/kakao-ios-sdk/Sources/KakaoSDKFriendCore/KakaoSDKFriendCore.xcframework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -92,6 +93,7 @@
 		F2CEFB2C2D6D9CD9002EA7C3 = {
 			isa = PBXGroup;
 			children = (
+				F2E42C182D6EF9940017CBD5 /* KakaoSDKFriendCore.xcframework */,
 				F2CEFB372D6D9CD9002EA7C3 /* LoginTest */,
 				F2CEFB362D6D9CD9002EA7C3 /* Products */,
 			);
@@ -236,9 +238,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gyunorld.LoginTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -266,9 +272,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gyunorld.LoginTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
